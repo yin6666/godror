@@ -642,8 +642,8 @@ func (d *drv) getPool(P commonAndPoolParams) (*connPool, error) {
 		usernameKey = P.Username
 	}
 	// determine key to use for pool
-	poolKey := fmt.Sprintf("%s\t%s\t%d\t%d\t%d\t%s\t%s\t%s\t%t\t%t\t%t\t%s\t%d\t%s",
-		usernameKey, P.ConnectString, P.MinSessions, P.MaxSessions,
+	poolKey := fmt.Sprintf("%s\t%s\t%s\t%d\t%d\t%d\t%s\t%s\t%s\t%t\t%t\t%t\t%s\t%d\t%s",
+		usernameKey, P.Password.String(), P.ConnectString, P.MinSessions, P.MaxSessions,
 		P.SessionIncrement, P.WaitTimeout, P.MaxLifeTime, P.SessionTimeout,
 		P.Heterogeneous, P.EnableEvents, P.ExternalAuth,
 		P.Timezone, P.MaxSessionsPerShard, P.PingInterval,
